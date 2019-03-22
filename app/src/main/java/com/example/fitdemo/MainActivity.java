@@ -2,6 +2,7 @@ package com.example.fitdemo;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -11,6 +12,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -20,6 +22,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
@@ -47,7 +50,9 @@ import java.lang.reflect.Field;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import cn.jpush.im.android.api.JMessageClient;
@@ -69,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
     private BottomNavigationBar bottomNavigationBar;
 
     private String userId,userName,userPicture;
+    private String todayTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,6 +150,47 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
         viewPager.addOnPageChangeListener(this);
         viewPager.setCurrentItem(0);
     }
+
+    /**
+     * 判断是否是当日第一次登陆
+     */
+    private void isTodayFirstLogin() {
+        //取
+        SharedPreferences preferences = getSharedPreferences("LastLoginTime", MODE_PRIVATE);
+        String lastTime = preferences.getString("LoginTime", "2019-02-25");
+        // Toast.makeText(MainActivity.this, "value="+date, Toast.LENGTH_SHORT).show();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");// 设置日期格式
+        todayTime = df.format(new Date());// 获取当前的日期
+
+        if (lastTime.equals(todayTime)) { //如果两个时间段相等
+            Toast.makeText(this, "不是当日首次登陆", Toast.LENGTH_SHORT).show();
+            Log.e("Time", lastTime);
+        } else {
+            Toast.makeText(this, "当日首次登陆", Toast.LENGTH_SHORT).show();
+            Log.e("date", lastTime);
+            Log.e("todayDate", todayTime);
+        }
+    }
+
+    /**
+     * 保存每次退出的时间
+     * @param extiLoginTime
+     */
+    private void saveExitTime(String extiLoginTime) {
+        SharedPreferences.Editor editor = getSharedPreferences("LastLoginTime", MODE_PRIVATE).edit();
+        editor.putString("LoginTime", extiLoginTime);
+        //这里用apply()而没有用commit()是因为apply()是异步处理提交，不需要返回结果，而我也没有后续操作
+        //而commit()是同步的，效率相对较低
+        //apply()提交的数据会覆盖之前的,这个需求正是我们需要的结果
+        editor.apply();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        saveExitTime(todayTime);
+    }
+
 
 
    //

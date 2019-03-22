@@ -1,29 +1,22 @@
-package com.example.fitdemo.Classes;
+package com.example.fitdemo.Broad;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
-import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.hardware.Camera;
 import android.os.Bundle;
-import android.os.Environment;
-import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.fitdemo.AutoProject.Tip;
 import com.example.fitdemo.R;
 import com.github.faucamp.simplertmp.RtmpHandler;
-import com.seu.magicfilter.utils.MagicFilterType;
 
 import net.ossrs.yasea.SrsCameraView;
 import net.ossrs.yasea.SrsEncodeHandler;

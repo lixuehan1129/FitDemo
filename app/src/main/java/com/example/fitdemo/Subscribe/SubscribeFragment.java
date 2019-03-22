@@ -21,6 +21,7 @@ import com.example.fitdemo.AutoProject.JDBCTools;
 import com.example.fitdemo.AutoProject.Tip;
 import com.example.fitdemo.Classes.RunActivity;
 import com.example.fitdemo.R;
+import com.example.fitdemo.Video.VideoNewActivity;
 import com.example.fitdemo.ViewHelper.BaseFragment;
 import com.mysql.jdbc.Connection;
 
@@ -166,7 +167,7 @@ public class SubscribeFragment extends BaseFragment {
         classVideoAdapter.setOnItemClickListener(new ClassVideoAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent = new Intent(getActivity(), VideoActivity.class);
+                Intent intent = new Intent(getActivity(), VideoNewActivity.class);
                 intent.putExtra("video_bid",bid.get(position));
                 intent.putExtra("video_section",section.get(position));
                 intent.putExtra("video_add",add.get(position));

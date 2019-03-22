@@ -1,4 +1,4 @@
-package com.example.fitdemo.Classes;
+package com.example.fitdemo.HuDong;
 
 import android.content.Intent;
 import android.os.Bundle;

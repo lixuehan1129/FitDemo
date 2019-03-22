@@ -1,4 +1,4 @@
-package com.example.fitdemo.Classes;
+package com.example.fitdemo.HuDong;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -16,8 +16,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.util.Util;
 import com.example.fitdemo.Adapter.HuDongAdapter;
 import com.example.fitdemo.AutoProject.AppConstants;
 import com.example.fitdemo.AutoProject.JDBCTools;

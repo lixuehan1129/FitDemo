@@ -120,6 +120,15 @@ public class ClassSelectAdapter extends RecyclerView.Adapter<ClassSelectAdapter.
         }
     }
 
+    /**
+     * 添加并更新数据，同时具有动画效果
+     */
+    public void addDataAt(int position, Class_select data) {
+        mDataSet.add(position, data);
+        notifyItemInserted(position);//更新数据集，注意如果用adapter.notifyDataSetChanged()将没有动画效果
+    }
+
+
 
     @Override
     public int getItemCount() {

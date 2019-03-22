@@ -1,4 +1,4 @@
-package com.example.fitdemo.Classes;
+package com.example.fitdemo.HuDong;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
@@ -19,20 +19,16 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.fitdemo.AutoProject.AppConstants;
 import com.example.fitdemo.AutoProject.JDBCTools;
 import com.example.fitdemo.AutoProject.SharePreferences;
 import com.example.fitdemo.AutoProject.Tip;
-import com.example.fitdemo.Personal.PersonChangeActivity;
 import com.example.fitdemo.R;
 import com.example.fitdemo.Utils.StatusBarUtils;
 import com.example.fitdemo.okHttp.OkHttpUtil;
-import com.example.fitdemo.okHttp.ProgressListener;
 import com.iceteck.silicompressorr.VideoCompress;
 import com.mysql.jdbc.Connection;
 
@@ -45,8 +41,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import javax.xml.validation.TypeInfoProvider;
 
 import cn.jzvd.Jzvd;
 import cn.jzvd.JzvdStd;

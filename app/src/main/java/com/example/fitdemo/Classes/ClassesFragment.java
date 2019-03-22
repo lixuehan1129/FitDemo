@@ -54,7 +54,8 @@ public class ClassesFragment extends BaseFragment {
         imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),FitActivity.class);
+                Intent intent = new Intent(getActivity(),BaseNewActivity.class);
+                intent.putExtra("NianJi",1);
                 startActivity(intent);
             }
         });
@@ -62,7 +63,8 @@ public class ClassesFragment extends BaseFragment {
         imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),CyclingActivity.class);
+                Intent intent = new Intent(getActivity(),BaseNewActivity.class);
+                intent.putExtra("NianJi",2);
                 startActivity(intent);
             }
         });
@@ -70,7 +72,8 @@ public class ClassesFragment extends BaseFragment {
         imageView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),RunActivity.class);
+                Intent intent = new Intent(getActivity(),BaseNewActivity.class);
+                intent.putExtra("NianJi",3);
                 startActivity(intent);
             }
         });
@@ -79,7 +82,8 @@ public class ClassesFragment extends BaseFragment {
         imageView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),YogaActivity.class);
+                Intent intent = new Intent(getActivity(),BaseNewActivity.class);
+                intent.putExtra("NianJi",4);
                 startActivity(intent);
             }
         });

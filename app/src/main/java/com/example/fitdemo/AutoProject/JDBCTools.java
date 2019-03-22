@@ -19,7 +19,7 @@ public class JDBCTools {
         String pass = "daydayup";
         Connection conn = null;//声明连接对象
         String driver = "com.mysql.jdbc.Driver";// 驱动程序类名
-        String url = "jdbc:mysql://60.205.140.219:3306/tiyu?" // 数据库URL
+        String url = "jdbc:mysql://ty01.tipass.com:3306/tiyu?" // 数据库URL
                 + "useUnicode=true&characterEncoding=utf-8";// 防止乱码
         //使用 DriverManger.getConnection链接数据库  第一个参数为连接地址 第二个参数为用户名 第三个参数为连接密码  返回一个Connection对象
         try {
