@@ -1,4 +1,4 @@
-package com.example.fitdemo.Subscribe;
+package com.example.fitdemo.Video;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -19,10 +19,9 @@ import com.example.fitdemo.Adapter.SelectAdapter;
 import com.example.fitdemo.AutoProject.AppConstants;
 import com.example.fitdemo.AutoProject.JDBCTools;
 import com.example.fitdemo.AutoProject.SharePreferences;
-import com.example.fitdemo.MainActivity;
+import com.example.fitdemo.None.VideoRankActivity;
 import com.example.fitdemo.R;
 import com.example.fitdemo.AutoProject.Tip;
-import com.example.fitdemo.User.UserLoginActivity;
 import com.example.fitdemo.ViewHelper.BaseFragment;
 import com.mysql.jdbc.Connection;
 

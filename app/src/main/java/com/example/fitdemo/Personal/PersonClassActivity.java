@@ -8,14 +8,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.TextView;
 
 import com.example.fitdemo.Adapter.ClassSelectAdapter;
 import com.example.fitdemo.AutoProject.AppConstants;
 import com.example.fitdemo.AutoProject.JDBCTools;
 import com.example.fitdemo.AutoProject.SharePreferences;
 import com.example.fitdemo.R;
-import com.example.fitdemo.Subscribe.VideoActivity;
 import com.example.fitdemo.Utils.Class_select;
 import com.example.fitdemo.Utils.DateUtils;
 import com.example.fitdemo.Utils.StatusBarUtils;

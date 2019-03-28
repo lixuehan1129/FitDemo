@@ -1,4 +1,4 @@
-package com.example.fitdemo.Subscribe;
+package com.example.fitdemo.None;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -27,10 +27,8 @@ import com.example.fitdemo.ViewHelper.BaseFragment;
 import com.mysql.jdbc.Connection;
 
 
-import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 

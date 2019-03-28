@@ -1,4 +1,4 @@
-package com.example.fitdemo.Classes;
+package com.example.fitdemo.None;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -32,7 +32,6 @@ import com.example.fitdemo.Broad.BroadcastActivity;
 import com.example.fitdemo.HuDong.HuDongActivity;
 import com.example.fitdemo.HuDong.HuDongPlayActivity;
 import com.example.fitdemo.R;
-import com.example.fitdemo.Subscribe.VideoActivity;
 import com.example.fitdemo.Utils.StatusBarUtils;
 import com.mysql.jdbc.Connection;
 

@@ -3,7 +3,6 @@ package com.example.fitdemo.Recommend;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -25,10 +24,7 @@ import com.example.fitdemo.AutoProject.AppConstants;
 import com.example.fitdemo.AutoProject.JDBCTools;
 import com.example.fitdemo.AutoProject.SharePreferences;
 import com.example.fitdemo.AutoProject.Tip;
-import com.example.fitdemo.Classes.RunActivity;
-import com.example.fitdemo.MainActivity;
 import com.example.fitdemo.R;
-import com.example.fitdemo.User.UserLoginActivity;
 import com.example.fitdemo.Utils.Class_select;
 import com.example.fitdemo.Utils.DateUtils;
 import com.example.fitdemo.ViewHelper.BaseFragment;
@@ -40,7 +36,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by ROBOSOFT on 2018/11/27.
@@ -422,7 +417,9 @@ public class RunningFragment extends BaseFragment {
                         Statement stmt = conn.createStatement();
                         String sql = "DELETE FROM yu WHERE yu_bid = " +
                                 bid +
-                                "";
+                                " AND yu_user = '" +
+                                SharePreferences.getString(getActivity(),AppConstants.USER_PHONE) +
+                                "'";
                         PreparedStatement preparedStatement = conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
                         preparedStatement.executeUpdate();
                         preparedStatement.close();

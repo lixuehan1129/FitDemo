@@ -1,4 +1,4 @@
-package com.example.fitdemo.Subscribe;
+package com.example.fitdemo.None;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.fitdemo.Personal.PersonDeviceActivity;
 import com.example.fitdemo.R;
 import com.example.fitdemo.Utils.StatusBarUtils;
 

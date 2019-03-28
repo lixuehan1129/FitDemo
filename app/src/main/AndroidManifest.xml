@@ -128,29 +128,29 @@
 
         </activity>
 
-        <activity android:name=".Subscribe.VideoPlayActivity"
+        <activity android:name=".None.VideoPlayActivity"
             tools:ignore="InnerclassSeparator"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait">
 
         </activity>
 
-        <activity android:name=".Classes.FitActivity"
+        <activity android:name=".None.FitActivity"
             tools:ignore="InnerclassSeparator">
 
         </activity>
 
-        <activity android:name=".Classes.CyclingActivity"
+        <activity android:name=".None.CyclingActivity"
             tools:ignore="InnerclassSeparator">
 
         </activity>
 
-        <activity android:name=".Classes.RunActivity"
+        <activity android:name=".None.RunActivity"
             tools:ignore="InnerclassSeparator">
 
         </activity>
 
-        <activity android:name=".Classes.YogaActivity"
+        <activity android:name=".None.YogaActivity"
             tools:ignore="InnerclassSeparator">
 
         </activity>
@@ -166,7 +166,7 @@
 
         </activity>
 
-        <activity android:name=".Classes.ChildActivity"
+        <activity android:name=".None.ChildActivity"
             tools:ignore="InnerclassSeparator">
 
         </activity>
@@ -208,7 +208,7 @@
 
         </activity>
 
-        <activity android:name=".Subscribe.VideoRankActivity"
+        <activity android:name=".None.VideoRankActivity"
             tools:ignore="InnerclassSeparator">
 
         </activity>
@@ -230,12 +230,12 @@
 
         </activity>
 
-        <activity android:name=".Classes.TextActivity"
+        <activity android:name=".None.TextActivity"
             tools:ignore="InnerclassSeparator">
 
         </activity>
 
-        <activity android:name=".Classes.BaseActivity"
+        <activity android:name=".None.BaseActivity"
             tools:ignore="InnerclassSeparator">
 
         </activity>
@@ -245,7 +245,7 @@
 
         </activity>
 
-        <activity android:name=".Subscribe.VideoActivity"
+        <activity android:name=".None.VideoActivity"
             tools:ignore="InnerclassSeparator"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait">
@@ -263,6 +263,15 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait">
         </activity>
+
+        <activity android:name=".Step.StepActivity"
+            tools:ignore="InnerclassSeparator" />
+
+        <receiver
+            android:name=".Step.MyReceiver"
+            android:enabled="true"
+            android:exported="true">
+        </receiver>
 
     </application>
 

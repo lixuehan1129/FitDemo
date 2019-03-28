@@ -1,1 +1,1 @@
-include ':app', ':library', ':silicompressor'
+include ':app', ':library', ':silicompressor', ':lib-jlogger', ':base-lib-notification', ':lib-todaystepcounter'

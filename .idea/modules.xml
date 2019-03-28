@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FitDemo.iml" filepath="$PROJECT_DIR$/FitDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base-lib-notification/base-lib-notification.iml" filepath="$PROJECT_DIR$/base-lib-notification/base-lib-notification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-jlogger/lib-jlogger.iml" filepath="$PROJECT_DIR$/lib-jlogger/lib-jlogger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-todaystepcounter/lib-todaystepcounter.iml" filepath="$PROJECT_DIR$/lib-todaystepcounter/lib-todaystepcounter.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/silicompressor/silicompressor.iml" filepath="$PROJECT_DIR$/silicompressor/silicompressor.iml" />
     </modules>

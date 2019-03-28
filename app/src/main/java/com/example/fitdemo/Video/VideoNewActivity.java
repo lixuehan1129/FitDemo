@@ -19,7 +19,6 @@ import com.example.fitdemo.AutoProject.AppConstants;
 import com.example.fitdemo.AutoProject.SharePreferences;
 import com.example.fitdemo.Media.JZMediaIjkplayer;
 import com.example.fitdemo.R;
-import com.example.fitdemo.Subscribe.VideoFragment;
 import com.example.fitdemo.Utils.StatusBarUtils;
 
 import java.lang.reflect.Field;

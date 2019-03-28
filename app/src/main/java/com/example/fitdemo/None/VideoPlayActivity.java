@@ -1,6 +1,5 @@
-package com.example.fitdemo.Subscribe;
+package com.example.fitdemo.None;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,13 +8,11 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.support.design.widget.TabLayout;
 import android.widget.TextView;
@@ -26,9 +23,9 @@ import com.example.fitdemo.AutoProject.AppConstants;
 import com.example.fitdemo.AutoProject.SharePreferences;
 import com.example.fitdemo.AutoProject.Tip;
 import com.example.fitdemo.Media.JZMediaIjkplayer;
-import com.example.fitdemo.Personal.PersonChangeActivity;
 import com.example.fitdemo.R;
 import com.example.fitdemo.Utils.StatusBarUtils;
+import com.example.fitdemo.Video.VideoFragment;
 
 
 import java.util.ArrayList;
@@ -38,7 +35,6 @@ import cn.jpush.im.android.api.JMessageClient;
 import cn.jpush.im.android.api.model.Conversation;
 import cn.jpush.im.android.api.model.Message;
 import cn.jpush.im.api.BasicCallback;
-import cn.jzvd.JZMediaSystem;
 import cn.jzvd.Jzvd;
 import cn.jzvd.JzvdStd;
 

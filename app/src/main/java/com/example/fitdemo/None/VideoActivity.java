@@ -1,4 +1,4 @@
-package com.example.fitdemo.Subscribe;
+package com.example.fitdemo.None;
 
 import android.content.Context;
 import android.content.Intent;

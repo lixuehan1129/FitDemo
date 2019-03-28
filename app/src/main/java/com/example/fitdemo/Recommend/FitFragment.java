@@ -416,7 +416,9 @@ public class FitFragment extends BaseFragment {
                         Statement stmt = conn.createStatement();
                         String sql = "DELETE FROM yu WHERE yu_bid = " +
                                 bid +
-                                "";
+                                " AND yu_user = '" +
+                                SharePreferences.getString(getActivity(),AppConstants.USER_PHONE) +
+                                "'";
                         PreparedStatement preparedStatement = conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
                         preparedStatement.executeUpdate();
                         preparedStatement.close();

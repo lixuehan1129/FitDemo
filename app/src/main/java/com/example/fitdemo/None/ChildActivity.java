@@ -1,4 +1,4 @@
-package com.example.fitdemo.Classes;
+package com.example.fitdemo.None;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

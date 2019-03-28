@@ -35,6 +35,7 @@ import com.example.fitdemo.Broad.BroadcastActivity;
 import com.example.fitdemo.Broad.GoBroadActivity;
 import com.example.fitdemo.Database.DataBaseHelper;
 import com.example.fitdemo.R;
+import com.example.fitdemo.Step.StepActivity;
 import com.example.fitdemo.ViewHelper.BaseFragment;
 import com.mysql.jdbc.Connection;
 
@@ -217,7 +218,7 @@ public class PersonalFragment extends BaseFragment {
         indoor1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(getActivity(),PersonIndoorActivity.class);
+//                Intent intent = new Intent(getActivity(),StepActivity.class);
 //                startActivity(intent);
                 Tip.showTip(getActivity(),"室内检测");
             }

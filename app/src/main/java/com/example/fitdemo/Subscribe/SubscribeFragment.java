@@ -2,6 +2,7 @@ package com.example.fitdemo.Subscribe;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -15,11 +16,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import com.example.fitdemo.Adapter.ClassVideoAdapter;
+import com.example.fitdemo.AutoProject.AppConstants;
 import com.example.fitdemo.AutoProject.JDBCTools;
+import com.example.fitdemo.AutoProject.SharePreferences;
 import com.example.fitdemo.AutoProject.Tip;
-import com.example.fitdemo.Classes.RunActivity;
 import com.example.fitdemo.R;
 import com.example.fitdemo.Video.VideoNewActivity;
 import com.example.fitdemo.ViewHelper.BaseFragment;
@@ -28,8 +31,12 @@ import com.mysql.jdbc.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 /**
@@ -38,8 +45,13 @@ import java.util.List;
 
 public class SubscribeFragment extends BaseFragment {
 
+
+    private int todayTime;
+    private int loginCount = 1;
+
     private RecyclerView recyclerView;
-    private TextView days, minutes;
+    private TextView days;
+    private ViewFlipper viewFlipper;
     ClassVideoAdapter classVideoAdapter;
     List<ClassVideoAdapter.Class_Video> class_videos;
     private static final int OVER = 1;
@@ -73,11 +85,15 @@ public class SubscribeFragment extends BaseFragment {
         recyclerView = (RecyclerView) view.findViewById(R.id.subscribeFragment_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         days = (TextView) view.findViewById(R.id.subscribeFragment_days);
-        minutes = (TextView) view.findViewById(R.id.subscribeFragment_minutes);
+
+        viewFlipper = (ViewFlipper) view.findViewById(R.id.view_flipper);
+
+        viewFlipper.startFlipping();
 
         //设置累计运动天数和运动时长
-        days.setText("15");
-        minutes.setText("37");
+        LoginCount();
+      //  days.setText("15");
+      //  minutes.setText("37");
 
         if(name.size() > 0){
             initData();
@@ -177,6 +193,59 @@ public class SubscribeFragment extends BaseFragment {
             }
         });
 
+    }
+
+    private void LoginCount(){
+        loginCount = SharePreferences.getInt(getActivity(),AppConstants.USER_LOGIN_COUNT);
+        isTodayFirstLogin();
+    }
+
+    /**
+     * 判断是否是当日第一次登陆
+     */
+    @SuppressLint("SetTextI18n")
+    private void isTodayFirstLogin() {
+        SharedPreferences preferences = getActivity().getSharedPreferences("LastLoginTime", MODE_PRIVATE);
+        int lastTime = preferences.getInt("LoginTime", 20190225);
+        // Toast.makeText(MainActivity.this, "value="+date, Toast.LENGTH_SHORT).show();
+        SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");// 设置日期格式
+        todayTime = Integer.parseInt(df.format(new Date()));// 获取当前的日期
+
+        if (lastTime == todayTime) { //如果两个时间段相等
+            days.setText("" + loginCount);
+        } else if(todayTime - lastTime == 1){
+            loginCount ++;
+            SharePreferences.remove(getActivity(),AppConstants.USER_LOGIN_COUNT);
+            SharePreferences.putInt(getActivity(),AppConstants.USER_LOGIN_COUNT,loginCount);
+            days.setText("" + loginCount);
+            saveExitTime(todayTime);
+        }else {
+            loginCount = 1;
+            SharePreferences.remove(getActivity(),AppConstants.USER_LOGIN_COUNT);
+            SharePreferences.putInt(getActivity(),AppConstants.USER_LOGIN_COUNT,loginCount);
+            days.setText("" + loginCount);
+            saveExitTime(todayTime);
+        }
+    }
+
+    /**
+     * 保存每次退出的时间
+     * @param extiLoginTime
+     */
+    private void saveExitTime(int extiLoginTime) {
+        SharedPreferences.Editor editor = getActivity().getSharedPreferences("LastLoginTime", MODE_PRIVATE).edit();
+        editor.putInt("LoginTime", extiLoginTime);
+        //这里用apply()而没有用commit()是因为apply()是异步处理提交，不需要返回结果，而我也没有后续操作
+        //而commit()是同步的，效率相对较低
+        //apply()提交的数据会覆盖之前的,这个需求正是我们需要的结果
+        editor.apply();
+    }
+
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+     //   saveExitTime(todayTime);
     }
 
 

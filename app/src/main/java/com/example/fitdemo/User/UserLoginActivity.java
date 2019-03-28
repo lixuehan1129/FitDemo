@@ -151,7 +151,8 @@ public class UserLoginActivity extends AppCompatActivity {
                                 ContentValues values = new ContentValues();
                                 SharePreferences.putString(UserLoginActivity.this, AppConstants.USER_PHONE, name.getText().toString());
                                 SharePreferences.putString(UserLoginActivity.this, AppConstants.USER_PASSWORD, password.getText().toString());
-                               // SharePreferences.putInt(UserLoginActivity.this,AppConstants.USER_sta,0);
+                                SharePreferences.putInt(UserLoginActivity.this, AppConstants.USER_LOGIN_COUNT, 0);
+                                // SharePreferences.putInt(UserLoginActivity.this,AppConstants.USER_sta,0);
                                 String phone = resultSet.getString("user_phone");
                                 String name1 = resultSet.getString("user_name");
                                 String picture = resultSet.getString("user_picture");
@@ -178,7 +179,11 @@ public class UserLoginActivity extends AppCompatActivity {
 //                                resultSet1.close();
 
                                 JDBCTools.releaseConnection(stmt,conn);
-                                Im();
+
+                                progressDialog.dismiss();
+                                Intent intent = new Intent(UserLoginActivity.this,MainActivity.class);
+                                startActivity(intent);
+                            //    Im();
                             }else {
                                 Tip.showTip(UserLoginActivity.this,"密码错误");
                                 progressDialog.dismiss();
